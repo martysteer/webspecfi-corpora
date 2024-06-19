@@ -2,16 +2,18 @@
 
 This data repository contains scraped stories from some old and new web zines.
 
-These are or were all public pages, either from the live web or the internet archive. All rights should remain with the original authors and/or the magazines in which their imaginations were published. 
+These are or were all public pages, either from the live web or the internet archive. All rights remain with the original authors and/or the magazines in which their imaginations were published.
 
-There are some amazing stories in these corpora. Please use them fairly and transparently, and cite your sources.
+The corpora should all be the same structure and can be combined into a larger corpus by concatenating all the corpus.jsonl files together, or merging the CSV files.
 
-All these corpora should roughly be the same JSONL and CSV structures, and so can be combined into a larger corpus by concatenating all the corpus.jsonl files together.
+This public Nomic Atlas map has all the data uploaded, so you can explore it a bit there: https://atlas.nomic.ai/data/martysteer/webspecfi-corpora/map
 
-Here is the current shape:
+[<img src="nomic-atlas-word-embeds-broad-topics.png" alt="nomic-atlas-word-embeds" style="zoom:800%;" width="80%" />](https://atlas.nomic.ai/data/martysteer/webspecfi-corpora/map)
+
+Ad here is the current list of magazines and number of stories from each:
 
 ```bash
-  webspecfi-corpora git:(main) ✗ wc -l **/*.jsonl | sort -r 
+webspecfi-corpora git:(main) $ wc -l **/*.jsonl | sort -r 
    13976 total
     2990 Bewildering Stories/corpus.jsonl
     2597 Aphelion/corpus.jsonl
@@ -43,9 +45,13 @@ Here is the current shape:
       39 Capricious SF/corpus.jsonl
 ```
 
-The data was scraped using wget and trafilatura, then the automatically detected metadata was manually cleanup a little bit. Some notes of the commands used to produce these are in the README.md files, but I got a little lazy repeating myself over and over, and I have cleaned a lot of my working notes and files out, so I can publish this corpus for others to use. It was created in 2023, so some of the live magazine sites will have newly published literature not contained here.
+The data was scraped using wget and trafilatura, then the automatically detected metadata was manually cleanup a little bit, but overall it's not great metadata I'm afraid to say. Any improvements are welcome. Just make a pull reqeust.
 
+Notes of the commands used to produce each of these are in the various README.md files, but I got a little lazy repeating myself over and over so they are incomplete. (hah!) Each magazine has a plain text list of the issue and story URL's that were used for scraping, so the entire corpus could easily be scraped again, if you have another usecase or improved pipeline (e.g. [Jina AI's Reader API](https://jina.ai/reader)). The CSV files have the same metadata fields as the JSONL files, but without the full text.
 
+This collection was created mid-2023 so some of the live magazine sites will have published new literature since then.
+
+There are some amazing stories in here. Please use them fairly and transparently, and cite your sources. Thx.
 
 ---
 
